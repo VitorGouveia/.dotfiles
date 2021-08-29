@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "push": "prisma db push",
     "dev": "tsnd -r tsconfig-paths/register --respawn --transpile-only --ignore-watch node_modules --no-notify src/index.ts",
+    "build": "rimraf build && babel src --extensions \".js,.ts\" --out-dir build --copy-files --no-copy-ignored",
+    "bundle": "./node_modules/.bin/esbuild build/index.js --bundle --outfile=dis/index.js",
     "start": "node build/index.js",
     "commit": "cz"
   },
@@ -12,26 +15,38 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@prisma/client": "2.30.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "sqlite3": "^5.0.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.15.0",
+    "@babel/node": "^7.14.9",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-typescript": "^7.15.0",
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
+    "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
     "@types/node": "^16.7.6",
+    "@types/uuid": "^8.3.1",
+    "babel-plugin-module-resolver": "^4.1.0",
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.3.0",
+    "dotenv": "^10.0.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.1",
     "nodemon": "^2.0.6",
     "prettier": "^2.3.2",
-    "prisma": "^2.30.0",
+    "prisma": "2.30.0",
+    "rimraf": "^3.0.2",
     "ts-node-dev": "^1.1.8",
     "tsconfig-paths": "^3.11.0",
-    "typescript": "^4.4.2"
+    "typescript": "^4.4.2",
+    "uuid": "^8.3.2"
   },
   "config": {
     "commitizen": {

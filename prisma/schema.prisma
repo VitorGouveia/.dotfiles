@@ -10,7 +10,7 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model Aluno {
+model Student {
   id        String @id
   name      String
   lastname  String
@@ -18,7 +18,7 @@ model Aluno {
   rg        String @unique
   homeworks Homework[]
 
-  @@map("alunos")
+  @@map("students")
 }
 
 model Homework {
@@ -28,8 +28,8 @@ model Homework {
   description String
   date        DateTime
 
-  userId      String
-  user        User @relation(fields: [userId], references: [id])
+  studentId      String
+  student        Student @relation(fields: [studentId], references: [id])
 
   @@map("homeworks")
 }
