@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var _express = _interopRequireDefault(require("express"));
 

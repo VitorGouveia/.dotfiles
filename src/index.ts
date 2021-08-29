@@ -1,6 +1,7 @@
 import express from "express"
 import "dotenv/config"
 import cors from "cors"
+import { json, urlencoded } from "body-parser"
 
 const app = express()
 //importando as rotas
@@ -12,7 +13,8 @@ const port = process.env.PORT
 app.use(cors())
 
 //permite que o express use json
-app.use(express.json())
+app.use(urlencoded({ extended: true }))
+app.use(json())
 
 //ouvindo o servidor na variável 'porta'
 app.listen(port, () => console.log(`Server rodando na porta ${port}`))

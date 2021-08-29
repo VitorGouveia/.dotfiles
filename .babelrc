@@ -10,12 +10,5 @@
     ],
     "@babel/preset-typescript"
   ],
-  "plugins": [
-    ["module-resolver", {
-      "alias": {
-        "@controller": "./src/controller"
-      }
-    }]
-  ],
   "ignore": ["node_modules"]
 }
