@@ -1,11 +1,11 @@
 //importando o express
-const express = require("express")
+import express from "express"
 //importando o módulo de segurança
-const cors = require("cors")
+import cors from "cors"
 const app = express()
 
 //importando as rotas
-const routes = require("./routes")
+// import routes from "./"
 
 //porta que será usado pelo express
 const port = 3333
@@ -17,7 +17,7 @@ app.use(cors())
 app.use(express.json())
 
 //executando as rotas
-app.use(routes)
+// app.use(routes)
 
 //criando a rota principal
 /**
