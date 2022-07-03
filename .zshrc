@@ -200,9 +200,24 @@ SPACESHIP_CHAR_SYMBOL="%(?:%{$FG[240]%}%{$FG[245]%}%{$fg_bold[red]%} "
 
 if [[ $PWD == $HOME ]]; then
   echo "[JARBAS]: hey sir, here are some information about your pc. \n"
-  pfetch
+  pfetch | lolcat
 fi
 
 # Allow it first
 # sudo chmod +x ~/.dotfiles/jarbas/main.sh
 alias jarbas="~/.dotfiles/jarbas/main.sh"
+
+export PATH=$PATH:~/.emacs.d/bin
+
+export DENO_INSTALL="/home/vitor/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
+
+alias emacs-server=emacs
+alias doom-run="doom run"
+alias emacs=doom-run
+alias lite=~/www/lite-app/lite
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
