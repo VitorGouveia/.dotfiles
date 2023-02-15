@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:focus-visible,
+:focus {
+  outline: none;
+}
+
+#grid-after::before {
+  content: '';
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(0, 0, 0, 0.4) 0%,
+    #000000 100%
+  );
+
+  @apply absolute inset-0 z-10 m-auto;
+}
