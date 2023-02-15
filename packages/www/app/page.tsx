@@ -233,9 +233,8 @@ export default function Page() {
               boxShadow: `0px 0px 64px ${shadow}`,
               color: color,
               borderColor: color,
-              transitionProperty: 'box-shadow, color, border-color, background',
-              transitionDuration: `${TYPE_WAIT_DELAY * 4}ms`,
-              transition: `filter 200ms`,
+              transition: `all ${TYPE_WAIT_DELAY * 4}ms, filter 200ms`,
+              // transition: `filter 200ms`,
             }}
             className={`flex items-center justify-center rounded-full border-2 border-warning-base bg-primary-background p-5 text-xl hover:brightness-125 md:text-2xl`}
           >
@@ -244,9 +243,7 @@ export default function Page() {
           <button
             style={{
               background: shadow,
-              transitionProperty: 'box-shadow, color, border-color, background',
-              transitionDuration: `${TYPE_WAIT_DELAY * 4}ms`,
-              transition: `filter 200ms`,
+              transition: `all ${TYPE_WAIT_DELAY * 4}ms, filter 200ms`,
             }}
             className={`flex items-center justify-center rounded-full p-5 text-xl hover:brightness-125 md:text-2xl`}
           >
@@ -322,7 +319,7 @@ export default function Page() {
               focus-visible:ring focus-visible:ring-[hsla(0,0%,100%,0.1)] md:w-full
               ${
                 SELECTED_OS_THEME === name
-                  ? 'bg-warning-base text-primary-background'
+                  ? 'bg-warning-base !text-primary-background'
                   : ''
               }
                 ${

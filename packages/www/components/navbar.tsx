@@ -106,7 +106,13 @@ type LinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
   widthAuto?: boolean;
 };
 
-function Link({ children, href, className, widthAuto = false }: LinkProps) {
+function Link({
+  children,
+  href,
+  className,
+  widthAuto = false,
+  ...props
+}: LinkProps) {
   const isOutsideLink = href.includes('https://');
 
   return (
@@ -116,6 +122,7 @@ function Link({ children, href, className, widthAuto = false }: LinkProps) {
           <a
             href={href}
             className={`${clickStyling} ${className ? className : ''}`}
+            {...props}
           >
             {children}
           </a>
@@ -123,6 +130,7 @@ function Link({ children, href, className, widthAuto = false }: LinkProps) {
           <NextLink
             href={href}
             className={`${clickStyling} ${className ? className : ''}`}
+            {...props}
           >
             {children}
           </NextLink>
